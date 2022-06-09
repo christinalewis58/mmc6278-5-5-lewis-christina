@@ -1,8 +1,6 @@
 //create click event after users presses "enter" or "add" button
 const form = document.querySelector('form')
 
-
-
 form.onsubmit = function(e) {
     //prevent form submission
     e.preventDefault()
@@ -11,15 +9,18 @@ form.onsubmit = function(e) {
     
     console.log(ul.value)
     //resets box after user adds item to list- passes test
-    ul.value = ""
     //insert user input inside #ultodo-list as another button element
-
-    var list = document.getElementById('todo-list')
+    
+    var list = document.getElementById('todo-list');
     var li = document.createElement('li');
     li.appendChild(document.createTextNode(ul));
     ul.appendChild(li);
-    list.innerHTML = 'how to get user input here'
-    
+    let createBTN = document.createElement("button");
+    createBTN.innerHTML= "test";
+    createBTN.type = "submit";
+    createBTN.name = "testBTN";
+    list.appendChild(createBTN);
+    ul.value = ""
     
     //var listItem = document.getElementById('todo-list')
     //listItem.innerText = 
