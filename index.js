@@ -3,14 +3,25 @@ const form = document.querySelector('form')
 
 form.onsubmit = function(e) {
     //prevent automatic form submission
-    e.preventDefault()
+    e.preventDefault();
+      
     //access form data by targeting the input
-    var ul = document.querySelector('input')
-    
-    console.log(ul.value)
+    var userInput = document.querySelector('input');
+    //Prevent empty form submission
+    if(userInput.value.trim() === "") {
+        return;
+    } 
+ 
+    var ul = document.getElementById('todo-list');
+    var button = document.createElement(button);
+        console.log(userInput.value)
 
+    var li = document.createElement('li');
+    ul.appendChild(li);
+    li.appendChild(button);
+    button.textContent = (userInput.value);
     //insert user input inside #ultodo-list as another button element
-    
+    /*
     var list = document.getElementById('todo-list');
     var li = document.createElement('li');
     li.appendChild(document.createTextNode(ul));
@@ -21,10 +32,10 @@ form.onsubmit = function(e) {
     createBTN.type = "submit";
     createBTN.name = "testBTN";
     list.appendChild(createBTN);
-    //resets box after user adds item to list- passes test
-    ul.value = ""
+    //resets box after user adds item to list- passes test*/
+
     
-     
+    userInput.value = "";    
 }
 
 
