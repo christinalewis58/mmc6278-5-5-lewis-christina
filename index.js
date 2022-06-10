@@ -13,13 +13,18 @@ form.onsubmit = function(e) {
     } 
  
     var ul = document.getElementById('todo-list');
-    var button = document.createElement(button);
+    var newButton = document.createElement('button');
         console.log(userInput.value)
+    // Create li element within the ul to-do list
+    var newLi = document.createElement('li');
+    ul.appendChild(newLi);
+    newLi.appendChild(newButton);
+    newButton.textContent = (userInput.value);
 
-    var li = document.createElement('li');
-    ul.appendChild(li);
-    li.appendChild(button);
-    button.textContent = (userInput.value);
+    newButton.onclick = function() {
+    newButton.style = 'text-decoration: line-through'
+    }
+   
     //insert user input inside #ultodo-list as another button element
     /*
     var list = document.getElementById('todo-list');
@@ -33,7 +38,8 @@ form.onsubmit = function(e) {
     createBTN.name = "testBTN";
     list.appendChild(createBTN);
     //resets box after user adds item to list- passes test*/
-
+    //var listItem = document.querySelectorAll('newLi > newButton')
+    //console.log(listItem)
     
     userInput.value = "";    
 }
