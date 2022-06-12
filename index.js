@@ -8,9 +8,9 @@ form.onsubmit = function(e) {
     //access form data by targeting the input
     var userInput = document.querySelector('input');
     //Prevent empty form submission
-    if(userInput.value.trim() === "") {
-        return;
-    } 
+        if(userInput.value.trim() === "") {
+            return;
+        } 
  
     var ul = document.getElementById('todo-list');
     var newButton = document.createElement('button');
@@ -18,25 +18,22 @@ form.onsubmit = function(e) {
 
     // Create li element within the ul to-do list
     var newLi = document.createElement('li');
-    ul.appendChild(newLi);
-    newLi.appendChild(newButton);
-    newButton.textContent = (userInput.value);
+        ul.appendChild(newLi);
+        newLi.appendChild(newButton);
+        newButton.textContent = (userInput.value);
 
     //mark to-do as done by strike-through
+        
     newButton.onclick = function() {
-    newButton.style = 'text-decoration: line-through';
-
-    //remove to-do when clicking twice
-    newButton.onclick = function() {
-    newButton.remove();
-    }
-}
-  
+        newButton.style = 'text-decoration: line-through';
     
+        //remove to-do when clicking twice
+        newButton.onclick = function() {
+        newButton.remove();
+        }
+    }
+
     userInput.value = "";    
 }
 
 
-//create another click event when user clicks on the to-do list item for a second time (when user clicks, change text-decoration to strike-through)
-
-//create a 3rd click event that deletes the item from the list after it's been checked off
